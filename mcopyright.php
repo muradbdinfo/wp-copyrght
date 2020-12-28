@@ -35,3 +35,11 @@ if(!defined('ABSPATH')) exit;
 }
 
 add_action('wp_enqueue_scripts','mcopyright_enqueue_scripts');
+
+
+add_action('admin_menu', 'copyright_plugin_setup_menu');
+ 
+function copyright_plugin_setup_menu(){
+    add_menu_page( 'Copyright Plugin Page', 'Copyright', 'manage_options', 'copyright-plugin', 'mcopyright_wp_footer' );
+}
+ 
